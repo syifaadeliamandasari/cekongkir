@@ -7,7 +7,7 @@ import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 
 class HomePage extends StatefulWidget {
-  const HomePage({Key? key}) : super(key: key);
+  const HomePage({Key? key, required bool showOnboarding}) : super(key: key);
 
   @override
   State<HomePage> createState() => _HomePageState();
@@ -25,6 +25,7 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       appBar: AppBar(
         title: const Text("Cek Ongkos Kirim"),
+        backgroundColor: const Color.fromARGB(255, 252, 23, 7), 
       ),
       body: Container(
         padding: const EdgeInsets.all(20),
@@ -122,8 +123,8 @@ class _HomePageState extends State<HomePage> {
                 child: Container(
                   height: 50,
                   decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(20),
-                      color: Colors.blue),
+                      borderRadius: BorderRadius.circular(10),
+                      color: const Color.fromARGB(255, 230, 13, 13)),
                   child: Material(
                     borderRadius: BorderRadius.circular(20),
                     color: Colors.transparent,
@@ -136,7 +137,7 @@ class _HomePageState extends State<HomePage> {
                             strBerat == null ||
                             strEkspedisi == null) {
                           const snackBar = SnackBar(
-                              content: Text("Ups, form tidak boleh kosong!"));
+                              content: Text("LAH KOCAK ISI DULU!"));
                           ScaffoldMessenger.of(context).showSnackBar(snackBar);
                         } else {
                           Navigator.push(
@@ -153,7 +154,7 @@ class _HomePageState extends State<HomePage> {
                       },
                       child: const Center(
                         child: Text(
-                          "Cek Ongkir",
+                          "Cek Ongkir Kirim",
                           style: TextStyle(
                             color: Colors.white,
                             fontWeight: FontWeight.bold,

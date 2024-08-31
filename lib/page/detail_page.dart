@@ -17,8 +17,7 @@ class DetailPage extends StatefulWidget {
 
 class _DetailPageState extends State<DetailPage> {
   List listData = [];
-  var strKey = "89d4833bc61f6b6fe0b4e5b482b6d81e"; // Ganti dengan API key Anda yang valid
-
+  var strKey = "89d4833bc61f6b6fe0b4e5b482b6d81e"; 
   @override
   void initState() {
     super.initState();
@@ -32,7 +31,7 @@ class _DetailPageState extends State<DetailPage> {
           "https://api.rajaongkir.com/starter/cost",
         ),
         headers: {
-          "key": strKey, // Menambahkan key di header juga
+          "key": strKey, 
         },
         body: {
           "origin": widget.kota_asal ?? "",
